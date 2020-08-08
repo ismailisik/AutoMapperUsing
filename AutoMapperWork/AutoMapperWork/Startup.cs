@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapperWork.Business.Abstract;
+using AutoMapperWork.Business.Concrete;
+using AutoMapperWork.DataAccess.Abstract;
+using AutoMapperWork.DataAccess.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +30,10 @@ namespace AutoMapperWork
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped<IProductDal, ProductDal>();
+            services.AddScoped<ICategoryDal, CategoryDal>();
+            services.AddScoped<IProductService, ProductManager>();
+            services.AddScoped<ICategoryService, CategoryManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
