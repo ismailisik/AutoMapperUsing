@@ -14,7 +14,7 @@ namespace AutoMapperWork.Mapping
         {
             //Not
             /*
-             * Peki benim Dto classım ile main classım arasında isim farklılıkları olursa nasıl maplerim aşağıdaki gibi...
+             * Peki benim Dto classım ile main classımın propları arasında isim farklılıkları olursa nasıl maplerim aşağıdaki gibi...
              */
 
             CreateMap<Category, CategoryDto>()
