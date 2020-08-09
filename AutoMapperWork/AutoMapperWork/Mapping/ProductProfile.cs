@@ -34,7 +34,7 @@ namespace AutoMapperWork.Mapping
 
             //Kısa Versiyonu
 
-            //Not: InqludeMember methodu kullanılmadan önce complex tipler ile Dto muz ile bir mapleme işlemi yapmamız gerekmektedir.
+            //Not: InqludeMember methodu kullanılmadan önce complex tipler ile Dto muz arasında bir mapleme işlemi yapmamız gerekmektedir.
             CreateMap<Category, ProductInfoDto>();
             CreateMap<Supplier, ProductInfoDto>();
 
