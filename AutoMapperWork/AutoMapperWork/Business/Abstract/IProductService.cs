@@ -16,5 +16,6 @@ namespace AutoMapperWork.Business.Abstract
         List<Product> GetList();
         Product GetById(int id);
         List<Product> GetCategoryById(int categoryId);
+        List<Product> GetProductInfo();
     }
 }

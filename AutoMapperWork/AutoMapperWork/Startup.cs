@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using AutoMapper;
 
 namespace AutoMapperWork
 {
@@ -30,6 +31,10 @@ namespace AutoMapperWork
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            //Servislerime AutoMapper'ý Ekledim...
+            services.AddAutoMapper(typeof(Startup));
+
             services.AddScoped<IProductDal, ProductDal>();
             services.AddScoped<ICategoryDal, CategoryDal>();
             services.AddScoped<IProductService, ProductManager>();

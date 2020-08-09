@@ -41,6 +41,11 @@ namespace AutoMapperWork.Business.Concrete
             return productDal.GetList();
         }
 
+        public List<Product> GetProductInfo()
+        {
+            return productDal.GetProductInfo();
+        }
+
         public void Update(Product product)
         {
             productDal.Update(product);

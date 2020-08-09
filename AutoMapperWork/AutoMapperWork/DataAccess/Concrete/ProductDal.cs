@@ -2,14 +2,20 @@
 using AutoMapperWork.DataAccess.Abstract;
 using AutoMapperWork.DataAccess.EntityFramework.Context;
 using AutoMapperWork.Entities;
-using System;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace AutoMapperWork.DataAccess.Concrete
 {
-    public class ProductDal:EfBaseRepository<Product,NorthwindContext> , IProductDal
+    public class ProductDal : EfBaseRepository<Product, NorthwindContext>, IProductDal
     {
+        public List<Product> GetProductInfo()
+        {
+            using (var context = new NorthwindContext())
+            {
+                return context.Products.Include("Category").Include("Supplier").ToList();
+            }
+        }
     }
 }
